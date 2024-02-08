@@ -1,10 +1,18 @@
 {
   "name": "run-in-parallel",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "This is package to run processes in parallel. Most useful use case: to run vite build and typescript type checking in parallel.",
   "main": "index.js",
+  "type": "module",
+  "bin": {
+    "run-in-parallel": "./index.js",
+    "rp": "./index.js"
+  },
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postbuild": "chmod +x ./index.js"
   },
   "repository": {
     "type": "git",

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { spawn } from 'node:child_process';
 
 const controller = new AbortController();
