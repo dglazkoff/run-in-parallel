@@ -1,0 +1,33 @@
+{
+  "name": "run-in-parallel",
+  "version": "1.0.1",
+  "description": "This is package to run processes in parallel. Most useful use case: to run vite build and typescript type checking in parallel.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dglazkoff/run-in-parallel.git"
+  },
+  "keywords": [
+    "parallel",
+    "concurrently",
+    "concurrent",
+    "run",
+    "child process",
+    "vite",
+    "build",
+    "typescript",
+    "type check"
+  ],
+  "author": {
+    "name": "Dmitrii Glazkov",
+    "email": "dimaglazkoff@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dglazkoff/run-in-parallel/issues"
+  },
+  "homepage": "https://github.com/dglazkoff/run-in-parallel#readme"
+}
