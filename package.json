@@ -1,6 +1,6 @@
 {
   "name": "run-in-parallel",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "This is package to run processes in parallel. Most useful use case: to run vite build and typescript type checking in parallel.",
   "main": "index.js",
   "type": "module",
