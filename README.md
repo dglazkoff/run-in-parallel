@@ -63,5 +63,43 @@ vite: ✓ built in 509ms
 ✅ All commands executed successfully!
 ```
 
+### Flags
+
+- `--output=inherit` - Output messages during the execution of the commands will pipe directly to the console. 
+You will be able to see different output messages from the commands than in default mode. 
+But the problem is that commands will be mixed and layered. 
+In the example below we can see that `vite` was in the process of transforming but `tsc` threw the error and mixed with the `vite` output.
+
+```bash
+> run-in-parallel --output=inherit "tsc --noEmit" "vite build"
+
+Start: tsc --noEmit
+Start: vite build
+vite v5.1.0 building for production...
+transforming (25) node_modules/react-dom/client.jssrc/App.tsx:7:46 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'number | (() => number)'.
+
+7   const [count, setCount] = useState<number>('s')
+                                               ~~~
+
+
+Found 1 error in src/App.tsx:7
+```
+
+In the case of the successful execution you can see the following output:
+```bash
+> run-in-parallel --output=inherit "tsc --noEmit" "vite build"
+
+Start: tsc --noEmit
+Start: vite build
+vite v5.1.0 building for production...
+✓ 34 modules transformed.
+dist/index.html                   0.46 kB │ gzip:  0.30 kB
+dist/assets/react-h3aPdYU7.svg    4.13 kB │ gzip:  2.14 kB
+dist/assets/index-4sK4E3Wk.css    1.39 kB │ gzip:  0.72 kB
+dist/assets/index-YnIXOLyF.js   143.39 kB │ gzip: 46.11 kB
+✓ built in 489ms
+✅ All processes executed successfully!
+```
+
 [npm-image]: https://img.shields.io/npm/v/run-in-parallel.svg
 [npm-url]: https://npmjs.org/package/run-in-parallel
